@@ -1,14 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+//import {Loadable} from 'react-loadable';
+//import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {Router, Switch} from 'react-router-dom'
+//import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import { BrowserRouter } from 'react-router-dom'
+import App from './app';
+import {history} from './_helpers';
 
-import {App} from './_components';
+/*const muiTheme = getMuiTheme({
+	pallete : {
+		textColor : '#000',
+		primary1Color : '#f58121',	
+	}
+});*/
 
-ReactDOM.render(
-    <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById('root')
+ReactDOM.render(	
+	<div>
+		<Router history={history}>
+			<Switch>
+				<App />
+			</Switch>
+		</Router>
+	</div>
+	, document.getElementById('root')
 );
